@@ -15,6 +15,7 @@ int main() {
   double pIncrease[] = {0.3, 0.5, 0.7, 0.9};
 
 
+  //to clear terminal with large output
   ofstream outputFile("output.txt");
  
 // p loop using array increasing
