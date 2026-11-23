@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 #include "src/coin.hpp"
@@ -34,14 +35,15 @@ int main() {
           for(int i = 0; i < n; i++) {
             heads += coin.flips();
           }
-
-          //output file print to avoid terminal flood
-          outputFile << "Trial " << trial + 1 << ": " << "Number of Flips(n) = " << n <<
-           ", Number of Trials(m) = " << m << ", Probability(p) = " << p << 
-           ", Number of Heads = " << heads << endl;
+          //avoid flood in terminal
+          outputFile << setw(6) << n
+                     << setw(8) << m
+                     << setw(10) << p
+                     << setw(12) << trial + 1
+                     << setw(14) << heads << "\n";
         }
       }
-    } 
+    }
   }
   //close output file
   outputFile.close();
