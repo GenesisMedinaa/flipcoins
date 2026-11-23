@@ -16,26 +16,34 @@ int main() {
 
 
   ofstream outputFile("output.txt");
-
+ 
+// p loop using array increasing
   for (double p : pIncrease) {
     Coin coin(p);
   
+    //increase n count from array
     for (int n : nCounts) {
+
+      //increase m count from array
       for (int m : mCounts) {
+
+        // trial m // n times
         for(int trial = 0; trial < m; trial++) {
           int heads = 0;
           for(int i = 0; i < n; i++) {
             heads += coin.flips();
           }
-          cout << "Trial " << trial + 1 << ": " << "Number of Flips(n) = " << n <<
+
+          //output file print to avoid terminal flood
+          outputFile << "Trial " << trial + 1 << ": " << "Number of Flips(n) = " << n <<
            ", Number of Trials(m) = " << m << ", Probability(p) = " << p << 
            ", Number of Heads = " << heads << endl;
         }
       }
     } 
   }
-
+  //close output file
   outputFile.close();
-  cout << "Results written to output.txt" << endl;
+  cout << "Results in output.txt" << endl;
 return 0;
 }

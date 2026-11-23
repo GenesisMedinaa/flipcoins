@@ -7,7 +7,7 @@ class Coin {
 
     private:
 
-    double p = 0.65;
+    double p;
     public:
 
     Coin(double prob) {
